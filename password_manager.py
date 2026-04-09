@@ -9,12 +9,12 @@ def encrypt_single_pass(filename: str) -> None:
     encrypted_password = caesar_encrypt(password)
     with open(filename, 'w') as file:
         file.write(encrypted_password)
-    pass
-
-
+    
 def encrypt_passwords_in_file(filename: str) -> None:
-    """TODO: Parte 2."""
-    pass
+    with open(filename,'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            print(row)
 
 
 def change_password(filename: str, website: str, password: str) -> bool:
