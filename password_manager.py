@@ -11,10 +11,17 @@ def encrypt_single_pass(filename: str) -> None:
         file.write(encrypted_password)
     
 def encrypt_passwords_in_file(filename: str) -> None:
-    with open(filename,'r') as file:
+    with open(filename, 'r') as file:
         reader = csv.reader(file)
+        rows = []
         for row in reader:
-            print(row)
+            if row:
+                rows.append(row)
+    for i in range(1, len(rows)):
+        rows[i][2] = caesar_encrypt(rows[i][2])
+    with open(filename, 'w') as file:
+        writer = csv.writer(file)
+        writer.writerows(rows)
 
 
 def change_password(filename: str, website: str, password: str) -> bool:
