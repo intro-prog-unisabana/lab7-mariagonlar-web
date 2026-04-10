@@ -1,13 +1,5 @@
 from password_manager import add_login, change_password, encrypt_passwords_in_file
 
-
-def main() -> None:
-    from password_manager import (
-    encrypt_passwords_in_file,
-    change_password,
-    add_login
-)
-
 def main() -> None:
     archivo = input("Enter the CSV file name:\n")
     encrypt_passwords_in_file(archivo)
