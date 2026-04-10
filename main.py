@@ -6,7 +6,7 @@ def main() -> None:
     while True:
         print("Options: (1) Change Password, (2) Add Password, (3) Quit:")
         opcion = input()
-        if opcion == 1:
+        if opcion == "1":
             user_input = input("Enter the website and the new password:\n")
             partes = user_input.split()
             if len(partes) < 2:
@@ -22,7 +22,7 @@ def main() -> None:
                 print("Website not found! Operation failed.")
             else:
                 print("Password changed.")
-        elif opcion == 2:
+        elif opcion == "2":
             user_input = input("Enter the website, username, and password:\n")
             partes = user_input.split()
             if len(partes) < 3:
@@ -36,7 +36,7 @@ def main() -> None:
                 continue
             add_login(archivo, website, username, password)
             print("Login added.")
-        elif opcion == 3:
+        elif opcion == "3":
             break
         else:
             print("Invalid option selected!")
